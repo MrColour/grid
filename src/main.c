@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:31:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/31 23:40:49 by home             ###   ########.fr       */
+/*   Updated: 2020/08/01 22:20:00 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,7 @@ void	game_context_initialize(t_game_context *app_state)
 
 int	main(void)
 {
-	double	num;
 	t_game_context	app_state;
-
-	num = toRadians(90);
-	printf("%f\n", num);
-	printf("%d\n", toDegree(num));
 
 	while (get_display()->active == true)
 	{

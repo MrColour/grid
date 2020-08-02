@@ -67,9 +67,9 @@ run:
 
 $(MORE_MATH_LIB):
 	make -C lib/more_math
-	cp lib/more_math/includes/* ./includes/
 	mv lib/more_math/more_math.a ./lib
 
 update:
 	make -C lib/more_math update
+	cp lib/more_math/includes/* ./includes/
 	mv lib/more_math/more_math.a ./lib
