@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 02:38:19 by home              #+#    #+#             */
-/*   Updated: 2020/08/01 22:18:46 by home             ###   ########.fr       */
+/*   Updated: 2020/08/02 03:59:20 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,32 @@ void	render_loop(void)
 	draw_grid();
 	draw_axis();
 	draw_circle_axis();
+
+	t_vector2f	vec;
+	t_vector2f	axis;
+	t_vector2f	normal;
+	t_vector2f	tangent;
+
+	vec.x = cos(toRadians(140));
+	vec.y = sin(toRadians(140));
+
+	axis.x = cos(toRadians(25 + 180)) * 2;
+	axis.y = sin(toRadians(25 + 180)) * 2;
+
+	normal_vector(&normal, axis, vec);
+	tangent_vector(&tangent, axis, vec);
+
+	SDLU_SetRenderDrawColor(0xFF00FF);
+	out_vector(vec);
+	out_vector(axis);
+	SDLU_SetRenderDrawColor(0x0000FF);
+	out_vector(normal);
+	out_vector(tangent);
+
+	tangent.x += normal.x;
+	tangent.y += normal.y;
+	draw_vector(normal, tangent);
+	SDLU_SetRenderDrawColor(0x000000);
 }
 
 /**

@@ -8,6 +8,7 @@ SRC_DIR = src/
 BIN_DIR = bin/
 
 OUT_NAMES = \
+	draw_vector \
 	grid \
 	input \
 	out \
@@ -57,6 +58,8 @@ save: fclean
 	git push
 
 re: fclean all
+	rm -f $(MORE_MATH_LIB)
+	make -C lib/more_math re
 
 run:
 	rm -f $(NAME)

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   draw_vector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 19:47:28 by home              #+#    #+#             */
-/*   Updated: 2020/08/02 01:43:19 by home             ###   ########.fr       */
+/*   Created: 2020/08/02 01:34:52 by home              #+#    #+#             */
+/*   Updated: 2020/08/02 02:11:31 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "out.h"
 
-void	ctoRGB(int color, int *r, int *g, int *b)
+void	draw_vector(t_vector2f start, t_vector2f end)
 {
-	*r = (color >> 16) & 0xFF;
-	*g = (color >>  8) & 0xFF;
-	*b = (color >>  0) & 0xFF;
+	int	x1, y1, x2, y2;
+
+	x1 = (start.x * UNIT) + WIN_WIDTH / 2;
+	y1 = -1 * (start.y * UNIT) + WIN_HEIGHT / 2;
+
+	x2 = (end.x * UNIT) + WIN_WIDTH / 2;
+	y2 = -1 * (end.y * UNIT) + WIN_HEIGHT / 2;
+
+	SDL_RenderDrawLine(get_display()->renderer, x1, y1, x2, y2);
 }
 
-void	SDLU_SetRenderDrawColor(int color)
+void	out_vector(t_vector2f end)
 {
-	int	r, g, b;
+	t_vector2f origin;
 
-	ctoRGB(color, &r, &g, &b);
-	SDL_SetRenderDrawColor(get_display()->renderer, r, g, b, SDL_ALPHA_OPAQUE);
+	origin.x = 0;
+	origin.y = 0;
+	draw_vector(origin, end);
 }
