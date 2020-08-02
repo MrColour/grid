@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/31 22:56:31 by home             ###   ########.fr       */
+/*   Updated: 2020/08/01 21:19:27 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ void		SDLU_close(void);
 void		ctoRGB(int color, int *r, int *g, int *b);
 
 void		set_color(int val, int *r, int *g, int *b);
+
+void		draw_grid(void);
+void		draw_axis(void);
 
 void		out(void);
 

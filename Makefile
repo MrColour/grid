@@ -8,6 +8,7 @@ SRC_DIR = src/
 BIN_DIR = bin/
 
 OUT_NAMES = \
+	grid \
 	input \
 	out \
 	SDL_initialize \

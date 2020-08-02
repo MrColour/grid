@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 02:38:19 by home              #+#    #+#             */
-/*   Updated: 2020/07/31 22:54:23 by home             ###   ########.fr       */
+/*   Updated: 2020/08/01 21:19:40 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	render_loop(void)
 	t_display	*display;
 
 	display = get_display();
+	draw_grid();
+	draw_axis();
 }
 
 /**
